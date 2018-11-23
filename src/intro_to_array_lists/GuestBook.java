@@ -2,10 +2,12 @@ package intro_to_array_lists;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -15,8 +17,11 @@ public class GuestBook implements ActionListener {
 	JButton b1 = new JButton();
 	JButton b2 = new JButton();
 	JButton b3 = new JButton();
-	JTextField T = new JTextField();
+	JTextField T = new JTextField(30);
 	JLabel JL = new JLabel();
+	JLabel JL2 = new JLabel();
+	String S = new String();
+	ArrayList<String> names = new ArrayList<String>();
 	public static void main(String[] args) {
 		GuestBook G = new GuestBook();
 		G.showButton();
@@ -35,17 +40,22 @@ public class GuestBook implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == b1) {
-			J.add(T);
-			J.add(JL);
+			P.add(T);
+			P.add(JL);
 			JL.setText("Enter a name");
-			J.add(b3);
+			P.add(b3);
+			b3.setText("Add");
 			b3.addActionListener(this);
 			J.pack();
 		} else if(e.getSource() == b2) {
-			
+			for(int i = 0; i < names.size(); i++) {
+				String n = names.get(i);
+				 JOptionPane.showMessageDialog(null, "#"+ (i+1) + " "+ n);
+				J.pack();
+			}
 		}
 		else if(e.getSource() == b3) {
-			
+		names.add(T.getText());
 		}
 		
 	}
