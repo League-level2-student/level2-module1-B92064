@@ -8,11 +8,11 @@ public class IntroToArrayLists {
 		//   Don't forget to import the ArrayList class
 		ArrayList<String> S = new ArrayList<String>();
 		//2. Add five Strings to your list
-		S.add("lol");
+		S.add("1");
+		S.add("seee");
+		S.add("3");
 		S.add("e");
-		S.add("lol");
-		S.add("e");
-		S.add("lol");
+		S.add("5");
 		//3. Print all the Strings using a standard for-loop
 		
 		for(int i = 0; i < S.size(); i++) {
@@ -32,14 +32,10 @@ public class IntroToArrayLists {
 			if(s.contains("e")) {
 				System.out.println(s);
 			}
-		/*	
-			if(S.get(i).charAt(1) == e) {
-				
-			}
-			*/
+		
 		}
-		for(int i = S.size(); i > 1; i++) {
-		//	System.out.println(S.get(i));
+		for(int i = S.size()-1; i > -1; i--) {
+		System.out.println(S.get(i));
 			
 		}
 		//5. Print only the even numbered elements in the list.
